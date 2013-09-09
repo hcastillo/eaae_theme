@@ -1,7 +1,7 @@
 <?php
-    new Themater_FeaturedPosts();
+    new EAAETheme_FeaturedPosts();
     
-    class Themater_FeaturedPosts
+    class EAAETheme_FeaturedPosts
     {
         var $theme;
         var $status = false;
@@ -74,7 +74,7 @@
             'zoom' => 'Zoom'
         );
         
-        function Themater_FeaturedPosts()
+        function EAAETheme_FeaturedPosts()
         {
             global $theme;
             $this->theme = $theme;
@@ -88,7 +88,7 @@
             $this->theme->add_hook($this->defaults['hook'], array(&$this, 'display_featuredposts'), $this->defaults['hook_priority']);
   
             if($this->theme->is_admin_user()) {
-                $this->themater_options();
+                $this->eaae_theme_options();
             }
         }
         
@@ -227,36 +227,36 @@
                 $featuredposts_sources_selected = $get_featuredposts_source == $key ? 'checked="checked"' : '';
                 ?>
                 <div id="select_slide_source_<?php echo $key; ?>" class="tt_radio_button_container">
-                    <input type="radio" name="featuredposts_source" value="<?php echo $key; ?>" <?php echo $featuredposts_sources_selected; ?> id="featuredposts_source_id_<?php echo $key; ?>" /> <a href="javascript:themater_featuredposts_source('<?php echo $key; ?>');" class="tt_radio_button"><?php echo $val; ?></a>
+                    <input type="radio" name="featuredposts_source" value="<?php echo $key; ?>" <?php echo $featuredposts_sources_selected; ?> id="featuredposts_source_id_<?php echo $key; ?>" /> <a href="javascript:eaae_theme_featuredposts_source('<?php echo $key; ?>');" class="tt_radio_button"><?php echo $val; ?></a>
                 </div>
                 <?php
             }
             ?>
                 <script type="text/javascript">
-                    function themater_featuredposts_source(source)
+                    function eaae_theme_featuredposts_source(source)
                     {
-                        $thematerjQ("#themater_featuredposts_custom").hide();
-                        $thematerjQ("#select_slide_source_custom a").removeClass('tt_radio_button_current');
-                        $thematerjQ("#select_slide_source_custom").find(":radio").removeAttr("checked");
+                        $eaae_themejQ("#eaae_theme_featuredposts_custom").hide();
+                        $eaae_themejQ("#select_slide_source_custom a").removeClass('tt_radio_button_current');
+                        $eaae_themejQ("#select_slide_source_custom").find(":radio").removeAttr("checked");
                         
-                        $thematerjQ("#themater_featuredposts_category").hide();
-                        $thematerjQ("#select_slide_source_category a").removeClass('tt_radio_button_current');
-                        $thematerjQ("#select_slide_source_category").find(":radio").removeAttr("checked");
+                        $eaae_themejQ("#eaae_theme_featuredposts_category").hide();
+                        $eaae_themejQ("#select_slide_source_category a").removeClass('tt_radio_button_current');
+                        $eaae_themejQ("#select_slide_source_category").find(":radio").removeAttr("checked");
                         
-                        $thematerjQ("#themater_featuredposts_posts").hide();
-                        $thematerjQ("#select_slide_source_posts a").removeClass('tt_radio_button_current');
-                        $thematerjQ("#select_slide_source_posts").find(":radio").removeAttr("checked");
+                        $eaae_themejQ("#eaae_theme_featuredposts_posts").hide();
+                        $eaae_themejQ("#select_slide_source_posts a").removeClass('tt_radio_button_current');
+                        $eaae_themejQ("#select_slide_source_posts").find(":radio").removeAttr("checked");
                         
-                        $thematerjQ("#themater_featuredposts_pages").hide();
-                        $thematerjQ("#select_slide_source_pages a").removeClass('tt_radio_button_current');
-                        $thematerjQ("#select_slide_source_pages").find(":radio").removeAttr("checked");
+                        $eaae_themejQ("#eaae_theme_featuredposts_pages").hide();
+                        $eaae_themejQ("#select_slide_source_pages a").removeClass('tt_radio_button_current');
+                        $eaae_themejQ("#select_slide_source_pages").find(":radio").removeAttr("checked");
                         
-                        $thematerjQ("#themater_featuredposts_"+source+"").fadeIn();
-                        $thematerjQ("#select_slide_source_"+source+" a").addClass('tt_radio_button_current');
-                        $thematerjQ("#select_slide_source_"+source+"").find(":radio").attr("checked","checked");
+                        $eaae_themejQ("#eaae_theme_featuredposts_"+source+"").fadeIn();
+                        $eaae_themejQ("#select_slide_source_"+source+" a").addClass('tt_radio_button_current');
+                        $eaae_themejQ("#select_slide_source_"+source+"").find(":radio").attr("checked","checked");
                     }
                     jQuery(document).ready(function(){
-                        themater_featuredposts_source('<?php echo $get_featuredposts_source; ?>');
+                        eaae_theme_featuredposts_source('<?php echo $get_featuredposts_source; ?>');
                     });
                     
                 </script>
@@ -271,17 +271,17 @@
                 function featured_slider_new()
                 {
                     var new_slide_id = 10000+Math.floor(Math.random()*100000);
-                    var get_new_slide_container = $thematerjQ('#new_custom_slide_prototype').html();
+                    var get_new_slide_container = $eaae_themejQ('#new_custom_slide_prototype').html();
                     
                     var new_slide_container = get_new_slide_container.replace(/the__id__/g, ''+new_slide_id+'');
                     
                     
-                    $thematerjQ('#new_custom_slide').append(''+new_slide_container+'');
+                    $eaae_themejQ('#new_custom_slide').append(''+new_slide_container+'');
                 }
                 
                 function featured_slider_delete(id)
                 {
-                    $thematerjQ('#featured_custom_slide_'+id+'').remove();
+                    $eaae_themejQ('#featured_custom_slide_'+id+'').remove();
                 }
                 
             </script>
@@ -298,7 +298,7 @@
                     <div style="padding: 0 0 0 0; border-bottom: 1px solid #ddd; margin-bottom: 20px;" id="featured_custom_slide_<?php echo $key; ?>">
                         <div style="background: #efefef; padding: 5px; margin-bottom: 5px; font-weight: bold;">
                             Slide #<?php echo $no; ?> - <?php echo $custom_slide['title']; ?>
-                            &nbsp; <a class="button" href="javascript:themater_showHide('featured_custom_slide_content_<?php echo $key; ?>');">Edit</a>
+                            &nbsp; <a class="button" href="javascript:eaae_theme_showHide('featured_custom_slide_content_<?php echo $key; ?>');">Edit</a>
                             &nbsp; <a class="button tt-button-red" href="javascript:featured_slider_delete('<?php echo $key; ?>');">Delete</a>
                         </div>
                         <div class="fp-form-element" id="featured_custom_slide_content_<?php echo $key; ?>" style="display: none;">
@@ -337,7 +337,7 @@
                     <div style="padding: 0 0 0 0; border-bottom: 1px solid #ddd; margin-bottom: 20px;" id="featured_custom_slide_the__id__">
                         <div style="background: #eee; padding: 5px; margin-bottom: 5px; font-weight: bold;">
                             <span style="color: green;">New Slide</span>
-                            &nbsp; <a class="button" href="javascript: themater_showHide('featured_custom_slide_content_the__id__');">Edit</a>
+                            &nbsp; <a class="button" href="javascript: eaae_theme_showHide('featured_custom_slide_content_the__id__');">Edit</a>
                             &nbsp; <a class="button tt-button-red" href="javascript: featured_slider_delete('the__id__');">Delete</a>
                         </div>
                         
@@ -373,7 +373,7 @@
         }
         
         
-        function themater_options()
+        function eaae_theme_options()
         {
              $this->theme->admin_option(array('Featured Posts', 15), 
                 'Featured Posts', 'featuredposts_enabled', 
@@ -402,7 +402,7 @@
             
             $this->theme->admin_option('Featured Posts', 
                 'Featured Posts Custom Wrap', 'featuredposts_source_custom_wrap', 
-                'raw', '<div id="themater_featuredposts_custom">', 
+                'raw', '<div id="eaae_theme_featuredposts_custom">', 
                 array('display'=>'clean')
             );
            
@@ -429,7 +429,7 @@
             
             $this->theme->admin_option('Featured Posts', 
                 'Featured Posts Category Wrap', 'featuredposts_source_category_wrap', 
-                'raw', '<div id="themater_featuredposts_category">', 
+                'raw', '<div id="eaae_theme_featuredposts_category">', 
                 array('display'=>'clean')
             );
             
@@ -453,7 +453,7 @@
             
             $this->theme->admin_option('Featured Posts', 
                 'Featured Selected Posts Wrap', 'featuredposts_source_posts_wrap', 
-                'raw', '<div id="themater_featuredposts_posts">', 
+                'raw', '<div id="eaae_theme_featuredposts_posts">', 
                 array('display'=>'clean')
             );
             
@@ -472,7 +472,7 @@
             
             $this->theme->admin_option('Featured Posts', 
                 'Featured Selected Pages Wrap', 'featuredposts_source_pages_wrap', 
-                'raw', '<div id="themater_featuredposts_pages">', 
+                'raw', '<div id="eaae_theme_featuredposts_pages">', 
                 array('display'=>'clean')
             );
             

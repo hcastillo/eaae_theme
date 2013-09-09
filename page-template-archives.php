@@ -29,7 +29,7 @@ global $theme; get_header(); ?>
             <div class="sitemap">
             
                 <div>
-                    <h2><?php _e('The Last 20 Posts', 'themater'); ?></h2>
+                    <h2><?php _e('The Last 20 Posts', 'eaae_theme'); ?></h2>
                     
                     <ul class="sitemap-list">
                         <?php wp_get_archives('type=postbypost&limit=20&show_post_count=1'); ?>
@@ -40,14 +40,14 @@ global $theme; get_header(); ?>
                 <div class="clearfix">
                     
                     <div class="alignleft sitemap-col-archives">
-                        <h2><?php _e('Categories', 'themater'); ?></h2>
+                        <h2><?php _e('Categories', 'eaae_theme'); ?></h2>
                         <ul class="sitemap-list">
                             <?php wp_list_categories('title_li=&show_count=1'); ?>
                         </ul>
                     </div>
                     
                     <div class="alignleft sitemap-col-archives">
-                        <h2><?php _e('Monthly Archives', 'themater'); ?></h2>
+                        <h2><?php _e('Monthly Archives', 'eaae_theme'); ?></h2>
                         <ul class="sitemap-list">
                             <?php wp_get_archives('type=monthly&show_post_count=1'); ?>
                         </ul>

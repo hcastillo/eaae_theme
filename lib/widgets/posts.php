@@ -2,7 +2,7 @@
 
 global $theme;
 
-$themater_posts_defaults = array(
+$eaae_theme_posts_defaults = array(
     'title' => 'Recent Posts',
     'posts_number' => '5',
     'order_by' => 'none',
@@ -23,18 +23,18 @@ $themater_posts_defaults = array(
 );
 
 $theme->options['widgets_options']['posts'] = is_array($theme->options['widgets_options']['posts'])
-    ? array_merge($themater_posts_defaults, $theme->options['widgets_options']['posts'])
-    : $themater_posts_defaults;
+    ? array_merge($eaae_theme_posts_defaults, $theme->options['widgets_options']['posts'])
+    : $eaae_theme_posts_defaults;
         
-add_action('widgets_init', create_function('', 'return register_widget("ThematerPosts");'));
+add_action('widgets_init', create_function('', 'return register_widget("EAAEThemePosts");'));
 
-class ThematerPosts extends WP_Widget 
+class EAAEThemePosts extends WP_Widget 
 {
     function __construct() 
     {
-        $widget_options = array('description' => __('Advanced widget for displaying the recent posts or posts from the selected categories or tags.', 'themater') );
+        $widget_options = array('description' => __('Advanced widget for displaying the recent posts or posts from the selected categories or tags.', 'eaae_theme') );
         $control_options = array( 'width' => 400);
-		$this->WP_Widget('themater_posts', '&raquo; Posts with Images', $widget_options, $control_options);
+		$this->WP_Widget('eaae_theme_posts', '&raquo; Posts with Images', $widget_options, $control_options);
     }
 
     function widget($args, $instance)
@@ -77,7 +77,7 @@ class ThematerPosts extends WP_Widget
                                         the_time($theme->get_option('dateformat'));
                                     }
                                     if($instance['display_author']) {
-                                       echo ' '; _e('By', 'themater'); echo ' '; the_author();
+                                       echo ' '; _e('By', 'eaae_theme'); echo ' '; the_author();
                                     } ?>
                                 </div><?php 
                             }
@@ -93,7 +93,7 @@ class ThematerPosts extends WP_Widget
                                     }
                                     
                                     if($instance['display_read_more']) {
-                                        ?> <a class="posts-widget-more" href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permalink to ', 'themater' ); the_title_attribute(); ?>"><?php _e('Read More &raquo;','themater'); ?></a><?php 
+                                        ?> <a class="posts-widget-more" href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permalink to ', 'eaae_theme' ); the_title_attribute(); ?>"><?php _e('Read More &raquo;','eaae_theme'); ?></a><?php 
                                     }?>
                                 </div><?php
                             }

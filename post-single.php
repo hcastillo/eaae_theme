@@ -10,7 +10,7 @@
            &nbsp; <span class="meta_categories"><?php the_category(', '); ?></span>
     
                 <?php if(comments_open( get_the_ID() ))  {
-                    ?> &nbsp; <span class="meta_comments"><?php comments_popup_link( __( 'No comments', 'themater' ), __( '1 Comment', 'themater' ), __( '% Comments', 'themater' ) ); ?></span><?php
+                    ?> &nbsp; <span class="meta_comments"><?php comments_popup_link( __( 'No comments', 'eaae_theme' ), __( '1 Comment', 'eaae_theme' ), __( '% Comments', 'eaae_theme' ) ); ?></span><?php
                 }
                 
                 if(is_user_logged_in())  {
@@ -31,7 +31,7 @@
             
             <?php
                 the_content('');
-                wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages:', 'themater' ) . '</strong>', 'after' => '</p>' ) );
+                wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages:', 'eaae_theme' ) . '</strong>', 'after' => '</p>' ) );
             ?>
     
         </div>

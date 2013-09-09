@@ -52,7 +52,7 @@ class EAAEThemeAdmin
 
     function loadMenu()
 	{
-	   add_theme_page("Theme Options", " Theme Options", 'administrator', 'eaae_theme',  array(&$this, 'EAAEThemeThemeOptions'));
+	   add_theme_page("Theme Options", $this->theme->theme_name . " Theme Options", 'administrator', 'eaae_theme',  array(&$this, 'EAAEThemeThemeOptions'));
 	}
     
     function loadHead()

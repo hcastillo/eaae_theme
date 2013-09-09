@@ -28,7 +28,7 @@
     <div id="header">
     
         <div class="logo">
-        <?php if ($theme->get_option('themater_logo_source') == 'image') { ?> 
+        <?php if ($theme->get_option('eaae_theme_logo_source') == 'image') { ?> 
             <a href="<?php echo home_url(); ?>"><img src="<?php $theme->option('logo'); ?>" alt="<?php bloginfo('name'); ?>" title="<?php bloginfo('name'); ?>" /></a>
         <?php } else { ?> 
             <?php if($theme->display('site_title')) { ?> 

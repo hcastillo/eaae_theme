@@ -2,14 +2,14 @@
     
     <div <?php post_class('post post-box clearfix'); ?> id="post-<?php the_ID(); ?>">
     
-        <h2 class="title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'themater' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+        <h2 class="title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'eaae_theme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
         
         <div class="postmeta-primary">
 
             <span class="meta_date"><?php echo get_the_date(); ?></span>
             
             <?php if(comments_open( get_the_ID() ))  {
-                    ?> &nbsp; <span class="meta_comments"><?php comments_popup_link( __( 'No comments', 'themater' ), __( '1 Comment', 'themater' ), __( '% Comments', 'themater' ) ); ?></span><?php
+                    ?> &nbsp; <span class="meta_comments"><?php comments_popup_link( __( 'No comments', 'eaae_theme' ), __( '1 Comment', 'eaae_theme' ), __( '% Comments', 'eaae_theme' ) ); ?></span><?php
                 }
             ?> 
         </div>
@@ -32,7 +32,7 @@
         
         <?php if($theme->display('read_more')) { ?>
         <div class="readmore">
-            <a href="<?php the_permalink(); ?>#more-<?php the_ID(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'themater' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $theme->option('read_more'); ?></a>
+            <a href="<?php the_permalink(); ?>#more-<?php the_ID(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'eaae_theme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $theme->option('read_more'); ?></a>
         </div>
         <?php } ?>
         

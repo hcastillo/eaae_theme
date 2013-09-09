@@ -1,7 +1,7 @@
 <div class="post">
         
     <div class="entry">
-        <p><?php _e('No results were found for your request!','themater'); ?></p>
+        <p><?php _e('No results were found for your request!','eaae_theme'); ?></p>
     </div>
 
     <div id="content-search">

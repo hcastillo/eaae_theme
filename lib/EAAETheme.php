@@ -1,11 +1,11 @@
 <?php
-class Themater
+class EAAETheme
 {
     var $theme_name = false;
     var $options = array();
     var $admin_options = array();
     
-    function Themater($set_theme_name = false)
+    function EAAETheme($set_theme_name = false)
     {
         if($set_theme_name) {
             $this->theme_name = $set_theme_name;
@@ -126,12 +126,12 @@ class Themater
     
     function hook($tag, $arg = '')
     {
-        do_action('themater_' . $tag, $arg);
+        do_action('eaae_theme_' . $tag, $arg);
     }
     
     function add_hook($tag, $function_to_add, $priority = 10, $accepted_args = 1)
     {
-        add_action( 'themater_' . $tag, $function_to_add, $priority, $accepted_args );
+        add_action( 'eaae_theme_' . $tag, $function_to_add, $priority, $accepted_args );
     }
     
     function admin_option($menu, $title, $name = false, $type = false, $value = '', $attributes = array())
@@ -193,7 +193,7 @@ class Themater
         $wp_widgets = array('Archives', 'Calendar', 'Categories', 'Links', 'Meta', 'Pages', 'Recent_Comments', 'Recent_Posts', 'RSS', 'Search', 'Tag_Cloud', 'Text');
         
         if (in_array($widget, $custom_widgets)) {
-            $widget_name = 'Themater' . $widget_name;
+            $widget_name = 'EAAETheme' . $widget_name;
             if(!$instance) {
                 $instance = $this->options['widgets_options'][strtolower($widget)];
             } else {
@@ -233,14 +233,14 @@ $this->_load_shortcodes();
         
         if($this->is_admin_user()) {
             include (THEMATER_ADMIN_DIR . '/Admin.php');
-            new ThematerAdmin();
+            new EAAEThemeAdmin();
         } 
     }
     
     function _load_translation()
     {
         if($this->options['translation']['enabled']) {
-            load_theme_textdomain( 'themater', $this->options['translation']['dir']);
+            load_theme_textdomain( 'eaae_theme', $this->options['translation']['dir']);
         }
         return;
     }
@@ -431,9 +431,9 @@ $this->_load_shortcodes();
 		} elseif ( is_page() ) {
 			single_post_title( '' ); echo ' | '; bloginfo( 'name' );
 		} elseif ( is_search() ) {
-			printf( __( 'Search results for %s', 'themater' ), '"'.get_search_query().'"' );  $this->page_number(); echo ' | '; bloginfo( 'name' );
+			printf( __( 'Search results for %s', 'eaae_theme' ), '"'.get_search_query().'"' );  $this->page_number(); echo ' | '; bloginfo( 'name' );
 		} elseif ( is_404() ) { 
-			_e( 'Not Found', 'themater' ); echo ' | '; bloginfo( 'name' );
+			_e( 'Not Found', 'eaae_theme' ); echo ' | '; bloginfo( 'name' );
 		} else { 
 			wp_title( '' ); echo ' | '; bloginfo( 'name' ); $this->page_number();
 		}
@@ -528,7 +528,7 @@ $this->_load_shortcodes();
     function get_page_number() {
     	global $paged;
     	if ( $paged >= 2 ) {
-    	   return ' | ' . sprintf( __( 'Page %s', 'themater' ), $paged );
+    	   return ' | ' . sprintf( __( 'Page %s', 'eaae_theme' ), $paged );
     	}
     }
 }

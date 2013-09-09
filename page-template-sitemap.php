@@ -30,21 +30,21 @@ global $theme; get_header(); ?>
             
                 <div class="clearfix">
                     <div class="alignleft sitemap-col">
-                        <h2><?php _e('Pages', 'themater'); ?></h2>
+                        <h2><?php _e('Pages', 'eaae_theme'); ?></h2>
                         <ul class="sitemap-list">
                             <?php wp_list_pages('title_li='); ?>
                         </ul>
                     </div>
                     
                     <div class="alignleft sitemap-col">
-                        <h2><?php _e('Categories', 'themater'); ?></h2>
+                        <h2><?php _e('Categories', 'eaae_theme'); ?></h2>
                         <ul class="sitemap-list">
                             <?php wp_list_categories('title_li='); ?>
                         </ul>
                     </div>
                     
                     <div class="alignleft sitemap-col">
-                        <h2><?php _e('Archives', 'themater'); ?></h2>
+                        <h2><?php _e('Archives', 'eaae_theme'); ?></h2>
                         <ul class="sitemap-list">
                             <?php wp_get_archives('type=monthly&show_post_count=0'); ?>
                         </ul>
@@ -52,7 +52,7 @@ global $theme; get_header(); ?>
                 </div>
                 
                 <div>
-                    <h2><?php _e('Posts per category', 'themater'); ?></h2>
+                    <h2><?php _e('Posts per category', 'eaae_theme'); ?></h2>
                     
                     <?php
 			    

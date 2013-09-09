@@ -20,7 +20,7 @@
             
             <?php
                 the_content(''); 
-                wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages:', 'themater' ) . '</strong>', 'after' => '</p>' ) );
+                wp_link_pages( array( 'before' => '<p><strong>' . __( 'Pages:', 'eaae_theme' ) . '</strong>', 'after' => '</p>' ) );
             ?>
 
         </div>

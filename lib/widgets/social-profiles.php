@@ -1,7 +1,7 @@
 <?php
     global $theme;
     
-    $themater_social_profiles_defaults = array(
+    $eaae_theme_social_profiles_defaults = array(
         'title' => 'Social Profiles',
         'profiles' => array(
             array('title' => 'Twitter', 'url' => 'http://twitter.com/', 'button' => get_template_directory_uri() . '/images/social-profiles/twitter.png'),
@@ -14,20 +14,20 @@
     );
 
     $theme->options['widgets_options']['socialprofiles'] = is_array($theme->options['widgets_options']['socialprofiles'])
-    ? array_merge($themater_social_profiles_defaults, $theme->options['widgets_options']['socialprofiles'])
-    : $themater_social_profiles_defaults;
+    ? array_merge($eaae_theme_social_profiles_defaults, $theme->options['widgets_options']['socialprofiles'])
+    : $eaae_theme_social_profiles_defaults;
 
     
-add_action('widgets_init', create_function('', 'return register_widget("ThematerSocialProfiles");'));
-class ThematerSocialProfiles extends WP_Widget 
+add_action('widgets_init', create_function('', 'return register_widget("EAAEThemeSocialProfiles");'));
+class EAAEThemeSocialProfiles extends WP_Widget 
 {
     function __construct() 
     {
         global $theme;
         
-        $widget_options = array('description' => __('Add buttons to your social network profiles.', 'themater') );
+        $widget_options = array('description' => __('Add buttons to your social network profiles.', 'eaae_theme') );
         $control_options = array( 'width' => 480);
-        parent::__construct('themater_social_profiles', '&raquo; Social Profiles', $widget_options, $control_options);
+        parent::__construct('eaae_theme_social_profiles', '&raquo; Social Profiles', $widget_options, $control_options);
     }
 
     function widget($args, $instance)
@@ -65,8 +65,8 @@ class ThematerSocialProfiles extends WP_Widget
         $get_this_id = preg_replace("/[^0-9]/", '', $this->get_field_id('this_id_profiles'));
         $this_id = !$get_this_id ? 'this_id_profiles___i__' : 'this_id_profiles_' . $get_this_id;
     ?>
-    <div class="themater_social_profiles_widget">
-        <div class="tt-widget themater_social_profiles_widget_title">
+    <div class="eaae_theme_social_profiles_widget">
+        <div class="tt-widget eaae_theme_social_profiles_widget_title">
             <table width="100%">
                 <tr>
                     <td class="tt-widget-label" width="25%"><label for="<?php echo $this->get_field_id('title'); ?>">Title:</label></td>
@@ -76,7 +76,7 @@ class ThematerSocialProfiles extends WP_Widget
         </div>
             
         <div style="margin-bottom: 20px;">
-            <a class="button" onclick="themater_sp_new('<?php echo $this_id; ?>');" >Add New Profile</a> &nbsp; &nbsp; 
+            <a class="button" onclick="eaae_theme_sp_new('<?php echo $this_id; ?>');" >Add New Profile</a> &nbsp; &nbsp; 
         </div>
         <?php
             if(is_array($get_profiles)) {
@@ -85,7 +85,7 @@ class ThematerSocialProfiles extends WP_Widget
                     <div id="sp_container_<?php echo $this_id . $sp_id; ?>" style="padding: 0 0 10px 0; border-bottom: 1px solid #ddd; margin-bottom: 10px;" >
                         <div class="tt-clearfix" style="background: #eee; border: 1px solid #ddd; border-left: 4px solid #ddd; padding: 4px 8px;">
                             <div style="float: left;"><span style="font-weight: bold;" id="sp_title_<?php echo $this_id . $sp_id; ?>"><?php echo $sp['title']; ?></span></div>
-                            <div style="float: right;"><a class="tt-link" onclick="themater_togle('sp_edit_<?php echo $this_id . $sp_id; ?>');">Edit</a> | <a class="tt-link" onclick="themater_sp_delete('<?php echo $this_id . $sp_id; ?>');">Delete</a></div>
+                            <div style="float: right;"><a class="tt-link" onclick="eaae_theme_togle('sp_edit_<?php echo $this_id . $sp_id; ?>');">Edit</a> | <a class="tt-link" onclick="eaae_theme_sp_delete('<?php echo $this_id . $sp_id; ?>');">Delete</a></div>
                         </div>
                         
                         <div class="tt-hidden" id="sp_edit_<?php echo $this_id . $sp_id; ?>" style="background: #fff; padding: 10px; border: 1px solid #ddd; border-top: 0;">
@@ -95,7 +95,7 @@ class ThematerSocialProfiles extends WP_Widget
                                     <tr>
                                         <td class="tt-widget-label" width="25%">Title:</td>
                                         <td class="tt-widget-content" width="75%">
-                                            <input class="tt-text" id="sp_title_text_<?php echo $this_id . $sp_id; ?>" name="<?php echo $this->get_field_name('profiles'); ?>[<?php echo $sp_id; ?>][title]" type="text" value="<?php echo esc_attr($sp['title']); ?>" onkeyup="themater_sp_titles('<?php echo $this_id; ?>', '<?php echo $sp_id; ?>');" />
+                                            <input class="tt-text" id="sp_title_text_<?php echo $this_id . $sp_id; ?>" name="<?php echo $this->get_field_name('profiles'); ?>[<?php echo $sp_id; ?>][title]" type="text" value="<?php echo esc_attr($sp['title']); ?>" onkeyup="eaae_theme_sp_titles('<?php echo $this_id; ?>', '<?php echo $sp_id; ?>');" />
                                         </td>
                                     </tr>
                                     
@@ -133,12 +133,12 @@ class ThematerSocialProfiles extends WP_Widget
         
         ?>
         
-            <div id="themater_sp_new_<?php echo $this_id; ?>" style="display: none;">
+            <div id="eaae_theme_sp_new_<?php echo $this_id; ?>" style="display: none;">
                     
                 <div id="sp_container_the__id__" style="padding: 0 0 10px 0; border-bottom: 1px solid #ddd; margin-bottom: 10px;" >
                     <div class="tt-clearfix" style="background: #eee; border: 1px solid #ddd; border-left: 4px solid #ddd; padding: 4px 8px;">
                         <div style="float: left;"><span style="font-weight: bold;" id="sp_title_the__id__">New Profile</span></div>
-                        <div style="float: right;"><a class="tt-link" onclick="themater_togle('sp_edit_the__id__');">Edit</a> | <a class="tt-link" onclick="themater_sp_delete('the__id__');">Delete</a></div>
+                        <div style="float: right;"><a class="tt-link" onclick="eaae_theme_togle('sp_edit_the__id__');">Edit</a> | <a class="tt-link" onclick="eaae_theme_sp_delete('the__id__');">Delete</a></div>
                     </div>
                     
                     <div id="sp_edit_the__id__" style="background: #fff; padding: 10px; border: 1px solid #ddd; border-top: 0;">
@@ -148,7 +148,7 @@ class ThematerSocialProfiles extends WP_Widget
                                 <tr>
                                     <td class="tt-widget-label" width="25%">Title:</td>
                                     <td class="tt-widget-content" width="75%">
-                                        <input class="tt-text" id="sp_title_text_the__id__" name="name_replace_<?php echo $this->get_field_name('profiles'); ?>[the__id__][title]" type="text" value="New Profile" onkeyup="themater_sp_titles('<?php echo $this_id; ?>', 'new__id__');" />
+                                        <input class="tt-text" id="sp_title_text_the__id__" name="name_replace_<?php echo $this->get_field_name('profiles'); ?>[the__id__][title]" type="text" value="New Profile" onkeyup="eaae_theme_sp_titles('<?php echo $this_id; ?>', 'new__id__');" />
                                     </td>
                                 </tr>
                                 

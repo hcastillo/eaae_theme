@@ -1,7 +1,7 @@
 <?php
 global $theme;
         
-$themater_tabs_defaults = array(
+$eaae_theme_tabs_defaults = array(
     'number' => '3',
     'content_effect' => 'fadeIn',
     'tab_label_1' => 'Recent Posts', 'tab_content_1' => 'posts',
@@ -10,12 +10,12 @@ $themater_tabs_defaults = array(
 );
   
 $theme->options['widgets_options']['tabs'] = is_array($theme->options['widgets_options']['tabs'])
-    ?  array_merge($themater_tabs_defaults, $theme->options['widgets_options']['tabs'])
-    : $themater_tabs_defaults;
+    ?  array_merge($eaae_theme_tabs_defaults, $theme->options['widgets_options']['tabs'])
+    : $eaae_theme_tabs_defaults;
         
-add_action('widgets_init', create_function('', 'return register_widget("ThematerTabs");'));
+add_action('widgets_init', create_function('', 'return register_widget("EAAEThemeTabs");'));
 
-class ThematerTabs extends WP_Widget 
+class EAAEThemeTabs extends WP_Widget 
 {
     var $defaults;
     var $posts_defaults;
@@ -31,9 +31,9 @@ class ThematerTabs extends WP_Widget
         
         $this->comments_defaults = $theme->options['widgets_options']['comments'];
         
-        $widget_options = array('description' => __('Allows you to add multiple widgets in tabs. ', 'themater') );
+        $widget_options = array('description' => __('Allows you to add multiple widgets in tabs. ', 'eaae_theme') );
         $control_options = array( 'width' => 320);
-		$this->WP_Widget('themater_tabs', '&raquo; Tabs Widget', $widget_options,$control_options);
+		$this->WP_Widget('eaae_theme_tabs', '&raquo; Tabs Widget', $widget_options,$control_options);
     }
 
     function widget($args, $instance)
@@ -108,7 +108,7 @@ class ThematerTabs extends WP_Widget
                                                 the_time($theme->get_option('dateformat'));
                                             }
                                             if($this->posts_defaults['display_author']) {
-                                               echo ' '; _e('By', 'themater'); echo ' '; the_author();
+                                               echo ' '; _e('By', 'eaae_theme'); echo ' '; the_author();
                                             } ?>
                                         </div><?php 
                                     }
@@ -122,7 +122,7 @@ class ThematerTabs extends WP_Widget
                                             }
                                             
                                             if($this->posts_defaults['display_read_more']) {
-                                                ?> <a class="posts-widget-more" href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permalink to ', 'themater' ); the_title_attribute(); ?>"><?php _e('Read More &raquo;','themater'); ?></a><?php 
+                                                ?> <a class="posts-widget-more" href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permalink to ', 'eaae_theme' ); the_title_attribute(); ?>"><?php _e('Read More &raquo;','eaae_theme'); ?></a><?php 
                                             }?>
                                         </div><?php
                                     }

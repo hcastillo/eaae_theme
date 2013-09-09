@@ -8,7 +8,7 @@
         
             <?php $theme->hook('content_before'); ?>
         
-            <h2 class="page-title"><?php printf( __( 'Tag Archives: <span>%s</span>', 'themater' ), single_tag_title( '', false ) );  ?></h2>
+            <h2 class="page-title"><?php printf( __( 'Tag Archives: <span>%s</span>', 'eaae_theme' ), single_tag_title( '', false ) );  ?></h2>
             
             <?php 
                 $is_post_wrap = 0;

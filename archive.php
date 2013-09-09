@@ -11,16 +11,16 @@
             <h2 class="page-title"><?php
     
                /* If this is a daily archive */ 
-               if (is_day()) { printf( __( 'Daily Archives: <span>%s</span>', 'themater' ), get_the_date() ); 
+               if (is_day()) { printf( __( 'Daily Archives: <span>%s</span>', 'eaae_theme' ), get_the_date() ); 
                 
                 /* If this is a monthly archive */ 
-                } elseif (is_month()) { printf( __( 'Monthly Archives: <span>%s</span>', 'themater' ), get_the_date('F Y') );
+                } elseif (is_month()) { printf( __( 'Monthly Archives: <span>%s</span>', 'eaae_theme' ), get_the_date('F Y') );
                   
                 /* If this is a yearly archive */ 
-                } elseif (is_year()) { printf( __( 'Yearly Archives: <span>%s</span>', 'themater' ), get_the_date('Y') );
+                } elseif (is_year()) { printf( __( 'Yearly Archives: <span>%s</span>', 'eaae_theme' ), get_the_date('Y') );
                 
                 /* If this is a general archive */ 
-                } else { _e( 'Blog Archives', 'themater' ); } 
+                } else { _e( 'Blog Archives', 'eaae_theme' ); } 
             ?></h2>
         
             <?php 

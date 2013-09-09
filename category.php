@@ -8,7 +8,7 @@
         
             <?php $theme->hook('content_before'); ?>
         
-            <h2 class="page-title"><?php printf( __( 'Category Archives: <span>%s</span>', 'themater' ), single_cat_title( '', false ) ); ?></h2>
+            <h2 class="page-title"><?php printf( __( 'Category Archives: <span>%s</span>', 'eaae_theme' ), single_cat_title( '', false ) ); ?></h2>
             
             <?php 
                 $is_post_wrap = 0;

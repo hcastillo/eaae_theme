@@ -1,5 +1,5 @@
-<?php $search_text = empty($_GET['s']) ? __('Search', 'themater') : get_search_query(); ?> 
-<div id="search" title="<?php _e('Type and hit enter', 'themater'); ?>">
+<?php $search_text = empty($_GET['s']) ? __('Search', 'eaae_theme') : get_search_query(); ?> 
+<div id="search" title="<?php _e('Type and hit enter', 'eaae_theme'); ?>">
     <form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>"> 
         <input type="text" value="<?php echo $search_text; ?>" 
             name="s" id="s"  onblur="if (this.value == '')  {this.value = '<?php echo $search_text; ?>';}"  

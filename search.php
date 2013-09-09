@@ -8,7 +8,7 @@
         
             <?php $theme->hook('content_before'); ?>
         
-            <h2 class="page-title"><?php _e( 'Search Results for:', 'themater' ); ?> <span><?php echo get_search_query(); ?></span></h2>
+            <h2 class="page-title"><?php _e( 'Search Results for:', 'eaae_theme' ); ?> <span><?php echo get_search_query(); ?></span></h2>
             
             <?php 
                 $is_post_wrap = 0;
@@ -39,7 +39,7 @@
                 
                 else : ?>
                     <div class="entry">
-                        <p><?php printf( __( 'Sorry, but nothing matched your search criteria: %s. Please try again with some different keywords.', 'themater' ), '<strong>' . get_search_query() . '</strong>' ); ?></p>
+                        <p><?php printf( __( 'Sorry, but nothing matched your search criteria: %s. Please try again with some different keywords.', 'eaae_theme' ), '<strong>' . get_search_query() . '</strong>' ); ?></p>
                     </div>
                     
                     <div id="content-search">

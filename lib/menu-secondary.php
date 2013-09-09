@@ -70,26 +70,26 @@
     if($this->display('menu_secondary')) {
         
         // Register
-        register_nav_menu( 'secondary',  __( 'Secondary Menu', 'themater' ) );
+        register_nav_menu( 'secondary',  __( 'Secondary Menu', 'eaae_theme' ) );
         
         // Display Hook
-        $this->add_hook($this->options['menus']['menu-secondary']['hook'], 'themater_menu_secondary_display');
+        $this->add_hook($this->options['menus']['menu-secondary']['hook'], 'eaae_theme_menu_secondary_display');
         
-        function themater_menu_secondary_scripts() {
+        function eaae_theme_menu_secondary_scripts() {
             wp_enqueue_script( 'hoverIntent', THEMATER_URL . '/js/hoverIntent.js', array('jquery') );
             wp_enqueue_script( 'superfish', THEMATER_URL . '/js/superfish.js', array('jquery') );
             wp_enqueue_script( 'mobilemenu', THEMATER_URL . '/js/jquery.mobilemenu.js', array('jquery') );
         }
-        add_action('wp_enqueue_scripts', 'themater_menu_secondary_scripts'); 
+        add_action('wp_enqueue_scripts', 'eaae_theme_menu_secondary_scripts'); 
         
-        $this->custom_js(themater_menu_secondary_js());
+        $this->custom_js(eaae_theme_menu_secondary_js());
     }
     
     /**
      * Secondary Menu Functions
      */
     
-    function themater_menu_secondary_display()
+    function eaae_theme_menu_secondary_display()
     {
         global $theme;
         ?>
@@ -98,7 +98,7 @@
         <?php
     }
     
-    function themater_menu_secondary_default()
+    function eaae_theme_menu_secondary_default()
     {
         global $theme;
         ?>
@@ -110,7 +110,7 @@
         <?php
     }
     
-    function themater_menu_secondary_js()
+    function eaae_theme_menu_secondary_js()
     {
         global $theme;
 

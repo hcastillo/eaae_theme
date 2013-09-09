@@ -9,7 +9,7 @@
             <?php $theme->hook('content_before'); ?>
         
             <div class="entry">
-                <?php _e('The page you requested could not be found.','themater'); ?>
+                <?php _e('The page you requested could not be found.','eaae_theme'); ?>
             </div>
             
             <div id="content-search">

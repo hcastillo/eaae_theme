@@ -120,7 +120,6 @@ a:focus {
     font-family: Arial, Helvetica, Sans-serif;
     font-size:48px;
     line-height: 40px;
-    color: white;
     font-weight: bold;
 }
 

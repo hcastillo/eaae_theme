@@ -54,6 +54,14 @@
             ?> 
         </div>
         
+        <?php /* 
+            All links in the footer should remain intact. 
+            These links are all family friendly and will not hurt your site in any way. 
+            Warning! Your site may stop working if these links are edited or deleted 
+            
+            You can buy this theme without footer links online at http://fthemes.com/buy/?theme=suvzone
+        */ ?>
+        
         <div id="credits">&nbsp;</div><!-- #credits -->
         
     </div><!-- #footer -->

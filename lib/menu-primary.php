@@ -70,26 +70,26 @@
     if($this->display('menu_primary')) {
         
         // Register
-        register_nav_menu( 'primary',  __( 'Primary Menu', 'themater' ) );
+        register_nav_menu( 'primary',  __( 'Primary Menu', 'eaae_theme' ) );
         
         // Display Hook
-        $this->add_hook($this->options['menus']['menu-primary']['hook'], 'themater_menu_primary_display');
+        $this->add_hook($this->options['menus']['menu-primary']['hook'], 'eaae_theme_menu_primary_display');
         
-        function themater_menu_primary_scripts() {
+        function eaae_theme_menu_primary_scripts() {
             wp_enqueue_script( 'hoverIntent', THEMATER_URL . '/js/hoverIntent.js', array('jquery') );
             wp_enqueue_script( 'superfish', THEMATER_URL . '/js/superfish.js', array('jquery') );
             wp_enqueue_script( 'mobilemenu', THEMATER_URL . '/js/jquery.mobilemenu.js', array('jquery') );
         }
-        add_action('wp_enqueue_scripts', 'themater_menu_primary_scripts');
+        add_action('wp_enqueue_scripts', 'eaae_theme_menu_primary_scripts');
         
-        $this->custom_js(themater_menu_primary_js());
+        $this->custom_js(eaae_theme_menu_primary_js());
     }
     
     /**
      * Primary Menu Functions
      */
     
-    function themater_menu_primary_display()
+    function eaae_theme_menu_primary_display()
     {
         global $theme;
         ?>
@@ -98,20 +98,20 @@
         <?php
     }
     
-    function themater_menu_primary_default()
+    function eaae_theme_menu_primary_default()
     {
         global $theme;
         ?>
         <div class="<?php echo $theme->options['menus']['menu-primary']['wrap_class']; ?>">
 			<ul class="<?php echo $theme->options['menus']['menu-primary']['menu_class']; ?>">
-                <li <?php if(is_home() || is_front_page()) { ?>class="current_page_item"<?php } ?>><a href="<?php echo home_url(); ?>"><?php _e('Home','themater'); ?></a></li>
+                <li <?php if(is_home() || is_front_page()) { ?>class="current_page_item"<?php } ?>><a href="<?php echo home_url(); ?>"><?php _e('Home','eaae_theme'); ?></a></li>
 				<?php wp_list_pages('depth=' .  $theme->get_option('menu_primary_depth') . '&sort_column=menu_order&title_li=' ); ?>
 			</ul>
 		</div>
         <?php
     }
     
-    function themater_menu_primary_js()
+    function eaae_theme_menu_primary_js()
     {
         global $theme;
 

@@ -1,6 +1,6 @@
 <?php
-    require_once TEMPLATEPATH . '/lib/Themater.php';
-    $theme = new Themater('SuvZone');
+    require_once TEMPLATEPATH . '/lib/EAAETheme.php';
+    $theme = new EAAETheme('EAAE_Theme');
     $theme->options['includes'] = array('featuredposts');
     
     $theme->options['plugins_options']['featuredposts'] = array('hook' => 'main_before', 'image_sizes' => '930px. x 300px.', 'effect' => 'fade');
@@ -26,9 +26,9 @@
     $theme->load();
     
     register_sidebar(array(
-        'name' => __('Primary Sidebar', 'themater'),
+        'name' => __('Primary Sidebar', 'eaae_theme'),
         'id' => 'sidebar_primary',
-        'description' => __('The primary sidebar widget area', 'themater'),
+        'description' => __('The primary sidebar widget area', 'eaae_theme'),
         'before_widget' => '<ul class="widget-container"><li id="%1$s" class="widget %2$s">',
         'after_widget' => '</li></ul>',
         'before_title' => '<h3 class="widgettitle">',

@@ -2,7 +2,7 @@
 
 global $theme;
 
-$themater_facebook_defaults = array(
+$eaae_theme_facebook_defaults = array(
     'title' => 'Facebook',
     'url' => 'http://www.facebook.com/platform',
     'width' => '292',
@@ -15,18 +15,18 @@ $themater_facebook_defaults = array(
 );
 
 $theme->options['widgets_options']['facebook'] =  isset($theme->options['widgets_options']['facebook'])
-    ? array_merge($themater_facebook_defaults, $theme->options['widgets_options']['facebook'])
-    : $themater_facebook_defaults;
+    ? array_merge($eaae_theme_facebook_defaults, $theme->options['widgets_options']['facebook'])
+    : $eaae_theme_facebook_defaults;
         
-add_action('widgets_init', create_function('', 'return register_widget("ThematerFacebook");'));
+add_action('widgets_init', create_function('', 'return register_widget("EAAEThemeFacebook");'));
 
-class ThematerFacebook extends WP_Widget 
+class EAAEThemeFacebook extends WP_Widget 
 {
     function __construct() 
     {
-        $widget_options = array('description' => __('Facebook Like Box social widget. Enables Facebook Page owners to attract and gain Likes from their own website.', 'themater') );
+        $widget_options = array('description' => __('Facebook Like Box social widget. Enables Facebook Page owners to attract and gain Likes from their own website.', 'eaae_theme') );
         $control_options = array( 'width' => 440);
-		$this->WP_Widget('themater_facebook', '&raquo; Facebook Like Box', $widget_options, $control_options);
+		$this->WP_Widget('eaae_theme_facebook', '&raquo; Facebook Like Box', $widget_options, $control_options);
     }
 
     function widget($args, $instance)
@@ -115,9 +115,9 @@ class ThematerFacebook extends WP_Widget
                     <tr>
                         <td class="tt-widget-label">Misc Options:</td>
                         <td class="tt-widget-content">
-                            <input type="checkbox" name="<?php echo $this->get_field_name('show_faces'); ?>"  <?php checked('true', $instance['show_faces']); ?> value="true" />  <?php _e('Show Faces', 'themater'); ?>
-                            <br /><input type="checkbox" name="<?php echo $this->get_field_name('stream'); ?>"  <?php checked('true', $instance['stream']); ?> value="true" />  <?php _e('Show Stream', 'themater'); ?>
-                            <br /><input type="checkbox" name="<?php echo $this->get_field_name('header'); ?>"  <?php checked('true', $instance['header']); ?> value="true" />  <?php _e('Show Header', 'themater'); ?>   
+                            <input type="checkbox" name="<?php echo $this->get_field_name('show_faces'); ?>"  <?php checked('true', $instance['show_faces']); ?> value="true" />  <?php _e('Show Faces', 'eaae_theme'); ?>
+                            <br /><input type="checkbox" name="<?php echo $this->get_field_name('stream'); ?>"  <?php checked('true', $instance['stream']); ?> value="true" />  <?php _e('Show Stream', 'eaae_theme'); ?>
+                            <br /><input type="checkbox" name="<?php echo $this->get_field_name('header'); ?>"  <?php checked('true', $instance['header']); ?> value="true" />  <?php _e('Show Header', 'eaae_theme'); ?>   
                         </td>
                     </tr>
                     

@@ -2,7 +2,7 @@
 
 global $theme;
 
-$themater_infobox_defaults = array(
+$eaae_theme_infobox_defaults = array(
     'title' => 'Info Box Title',
     'description' => 'Add your description here.',
     'link' => '',
@@ -16,18 +16,18 @@ $themater_infobox_defaults = array(
 );
 
 $theme->options['widgets_options']['infobox'] = is_array($theme->options['widgets_options']['infobox'])
-    ? array_merge($themater_infobox_defaults, $theme->options['widgets_options']['infobox'])
-    : $themater_infobox_defaults;
+    ? array_merge($eaae_theme_infobox_defaults, $theme->options['widgets_options']['infobox'])
+    : $eaae_theme_infobox_defaults;
         
-add_action('widgets_init', create_function('', 'return register_widget("ThematerInfoBox");'));
+add_action('widgets_init', create_function('', 'return register_widget("EAAEThemeInfoBox");'));
 
-class ThematerInfoBox extends WP_Widget 
+class EAAEThemeInfoBox extends WP_Widget 
 {
     function __construct() 
     {
-        $widget_options = array('description' => __('Highlight a product or service with a custom image.', 'themater') );
+        $widget_options = array('description' => __('Highlight a product or service with a custom image.', 'eaae_theme') );
         $control_options = array( 'width' => 480);
-		$this->WP_Widget('themater_infobox', '&raquo; Info Box', $widget_options, $control_options);
+		$this->WP_Widget('eaae_theme_infobox', '&raquo; Info Box', $widget_options, $control_options);
     }
 
     function widget($args, $instance)

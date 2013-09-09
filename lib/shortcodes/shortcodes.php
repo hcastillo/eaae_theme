@@ -1,6 +1,6 @@
 <?php
 /*
-Themater Shorcodes Generator
+EAAETheme Shorcodes Generator
 Based on DW Shortcode Bootstrap by DesignWall (http://www.designwall.com)
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 define('THEMATER_SHORTCODES_DIR', get_template_directory() . '/lib/shortcodes');
 define('THEMATER_SHORTCODES_URL', get_template_directory_uri() . '/lib/shortcodes');
 
-class ThematerShortcodes{
+class EAAEThemeShortcodes{
 	
 	function __construct()
 	{
@@ -78,7 +78,7 @@ class ThematerShortcodes{
     
     function loadHead()
 	{
-		echo "<script type='text/javascript'> var themater_shortcodes_url = \"" . THEMATER_SHORTCODES_URL . "\"; </script> \n";
+		echo "<script type='text/javascript'> var eaae_theme_shortcodes_url = \"" . THEMATER_SHORTCODES_URL . "\"; </script> \n";
 	}
     
     /**
@@ -294,4 +294,4 @@ class ThematerShortcodes{
     
 
 }
-$themater_shortcodes = new ThematerShortcodes();
+$eaae_theme_shortcodes = new EAAEThemeShortcodes();

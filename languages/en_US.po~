@@ -169,12 +169,12 @@ msgid "No results were found for your request!"
 msgstr ""
 
 #. Text in echo
-#: lib/EAAETheme.php:1
+#: lib/Themater.php:1
 msgid "Not Found"
 msgstr ""
 
 #. Text in function
-#: lib/EAAETheme.php:1
+#: lib/Themater.php:1
 msgid "Page %s"
 msgstr ""
 
@@ -233,7 +233,7 @@ msgid "Search Results for:"
 msgstr ""
 
 #. Text in function
-#: lib/EAAETheme.php:1
+#: lib/Themater.php:1
 msgid "Search results for %s"
 msgstr ""
 

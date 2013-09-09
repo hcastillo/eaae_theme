@@ -2,7 +2,7 @@
 
 global $theme;
 
-$themater_comments_defaults = array(
+$eaae_theme_comments_defaults = array(
     'title' => 'Recent Comments',
     'comments_number' => '5',
     'display_author' => 'true',
@@ -15,18 +15,18 @@ $themater_comments_defaults = array(
 );
 
 $theme->options['widgets_options']['comments'] =  is_array($theme->options['widgets_options']['comments'])
-    ? array_merge($themater_comments_defaults, $theme->options['widgets_options']['comments'])
-    : $themater_comments_defaults;
+    ? array_merge($eaae_theme_comments_defaults, $theme->options['widgets_options']['comments'])
+    : $eaae_theme_comments_defaults;
         
-add_action('widgets_init', create_function('', 'return register_widget("ThematerComments");'));
+add_action('widgets_init', create_function('', 'return register_widget("EAAEThemeComments");'));
 
-class ThematerComments extends WP_Widget 
+class EAAEThemeComments extends WP_Widget 
 {
     function __construct() 
     {
-        $widget_options = array('description' => __('Advanced widget for displaying the recent posts with avatars', 'themater') );
+        $widget_options = array('description' => __('Advanced widget for displaying the recent posts with avatars', 'eaae_theme') );
         $control_options = array( 'width' => 400);
-		$this->WP_Widget('themater_comments', '&raquo; Comments with Avatars', $widget_options, $control_options);
+		$this->WP_Widget('eaae_theme_comments', '&raquo; Comments with Avatars', $widget_options, $control_options);
     }
 
     function widget($args, $instance)
@@ -139,9 +139,9 @@ class ThematerComments extends WP_Widget
                     <tr>
                         <td class="tt-widget-label">Display Elements:</td>
                         <td class="tt-widget-content">
-                            <input type="checkbox" name="<?php echo $this->get_field_name('display_author'); ?>"  <?php checked('true', $instance['display_author']); ?> value="true" />  <?php _e('Author', 'themater'); ?>
-                            <br /><input type="checkbox" name="<?php echo $this->get_field_name('display_comment'); ?>"  <?php checked('true', $instance['display_comment']); ?> value="true" />  <?php _e('The Comment', 'themater'); ?>
-                            <br /><input type="checkbox" name="<?php echo $this->get_field_name('display_avatar'); ?>"  <?php checked('true', $instance['display_avatar']); ?> value="true" />  <?php _e('Avatar', 'themater'); ?>   
+                            <input type="checkbox" name="<?php echo $this->get_field_name('display_author'); ?>"  <?php checked('true', $instance['display_author']); ?> value="true" />  <?php _e('Author', 'eaae_theme'); ?>
+                            <br /><input type="checkbox" name="<?php echo $this->get_field_name('display_comment'); ?>"  <?php checked('true', $instance['display_comment']); ?> value="true" />  <?php _e('The Comment', 'eaae_theme'); ?>
+                            <br /><input type="checkbox" name="<?php echo $this->get_field_name('display_avatar'); ?>"  <?php checked('true', $instance['display_avatar']); ?> value="true" />  <?php _e('Avatar', 'eaae_theme'); ?>   
                         </td>
                     </tr>
                     

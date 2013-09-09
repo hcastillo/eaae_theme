@@ -8,7 +8,7 @@
             
             <?php $theme->hook('content_before'); ?>
         
-            <h2 class="page-title"><?php printf( __( 'Author Archives: <span>%s</span>', 'themater' ),  get_the_author() ); ?></h2>
+            <h2 class="page-title"><?php printf( __( 'Author Archives: <span>%s</span>', 'eaae_theme' ),  get_the_author() ); ?></h2>
         
             <?php 
                 if (have_posts()) : while (have_posts()) : the_post();
