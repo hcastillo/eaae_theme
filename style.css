@@ -123,8 +123,13 @@ a:focus {
     color: white;
     font-weight: bold;
 }
+ 
+h1.site_title a {
+    color: #444444;
+    text-decoration: none;
+}
 
-.logo h1.site_title a, .logo h1.site_title a:hover {
+.logo h1.site_title, .logo a:hover {
     color: #111111;
     text-decoration: none;
 }

@@ -120,10 +120,16 @@ a:focus {
     font-family: Arial, Helvetica, Sans-serif;
     font-size:48px;
     line-height: 40px;
+    color: white;
     font-weight: bold;
 }
+ 
+h1.site_title a {
+    color: #ffffff;
+    text-decoration: none;
+}
 
-.logo h1.site_title a, .logo h1.site_title a:hover {
+.logo h1.site_title, .logo a:hover {
     color: #111111;
     text-decoration: none;
 }
