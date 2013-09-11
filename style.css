@@ -217,6 +217,10 @@ h1.site_title a {
 .menu-primary a.sf-with-ul {
     padding-right: 20px;
     min-width: 1px;
+    /* In the menu, we don't want to show content on a page that has
+       subpages: */
+    pointer-events: none;
+    /* cursor: default; */
 }
 .menu-primary  .sf-sub-indicator {
     position: absolute;
